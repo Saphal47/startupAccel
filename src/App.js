@@ -1,24 +1,34 @@
 import logo from './logo.svg';
+import React,{useState} from 'react'
+
 import './App.css';
+import Navbar from './components/Navbar';
+import Textform from './components/Textform';
 
 function App() {
+
+  const [darkmode,setDarkMode] = useState('light');
+
+  const togglemode = () => {
+    if(darkmode === 'light'){
+       setDarkMode('dark');
+       document.body.style.backgroundColor = 'rgb(9 5 72)';
+      //  showAlert(" Dark Mode Enabled","Success");
+       document.title="TextApp-DarkMode";
+    }
+    else{
+      setDarkMode('light');
+      document.body.style.backgroundColor = 'white';
+      // showAlert(" Light Mode Enabled","Success");
+      document.title="StartupAccel-Home";
+    }
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Navbar mode={darkmode} togglemode={togglemode}/>
+    <Textform/>
+    </>
   );
 }
 
