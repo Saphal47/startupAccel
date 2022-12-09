@@ -14,7 +14,7 @@ function App() {
        setDarkMode('dark');
        document.body.style.backgroundColor = 'rgb(9 5 72)';
       //  showAlert(" Dark Mode Enabled","Success");
-       document.title="TextApp-DarkMode";
+       document.title="StartupAccel-DarkMode";
     }
     else{
       setDarkMode('light');
